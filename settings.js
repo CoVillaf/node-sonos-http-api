@@ -18,13 +18,9 @@ var settings = {
   port: 5005,
   ip: "0.0.0.0",
   securePort: 5006,
-  announceVolume: 40
+  announceVolume: 40,
+  cacheDir: path.join(__dirname, '../../', 'userdata'),
 };
-
-// load user settings
-const settingsFileFullPath = path.resolve(__dirname, 'settings.json');
-const userSettings = tryLoadJson(settingsFileFullPath);
-merge(settings, userSettings);
 
 logger.debug(settings);
 
